@@ -1,0 +1,202 @@
+/* ===== RESET BÁSICO ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== CORPO ===== */
+body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* ===== CABEÇALHO ===== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: #000;
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 140px;
+    
+}
+
+header img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+header img {
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s ease;
+}
+
+/* ===== MENU DE NAVEGAÇÃO ===== */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav a {
+    background-color: #ff5100;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main.container {
+    padding: 50px;
+}
+
+/* ===== CARROSSEL LATERAL DIREITA → ESQUERDA ===== */
+.carousel {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+}
+
+.list {
+    display: flex;
+    transition: transform 0.55s ease-in-out;
+}
+
+.item {
+    min-width: 100%;
+    flex-shrink: 0;
+}
+
+.item img {
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+    background-color: #fff;
+    
+}
+
+/* ===== BOTÕES DE NAVEGAÇÃO ===== */
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 10;
+}
+
+.carousel button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel .prev {
+    left: 10px;
+}
+
+.carousel .next {
+    right: 10px;
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .item img {
+        height: 250px;
+    }
+}
+
+
+
+/* ===== CATEGORIAS ===== */
+.categorias {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.categorias a img {
+    width: 200px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.categorias a img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    margin-top: 50px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main.container {
+        padding: 20px;
+    }
+
+    .categorias {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categorias a img {
+        width: 90%;
+        height: auto;
+    }
+
+    .item {
+        min-width: 80%;
+    }
+}
+
